@@ -38,7 +38,6 @@ export default function App() {
     <div className="container">
       <div className="conteudo">
         <h1 className="titulo">Tarefas</h1>
-        <h2>{user.completed}</h2>
         <div>
           <form onSubmit={handOnSubmit}>
             <div className="tarefa_box">
