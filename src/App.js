@@ -13,11 +13,23 @@ export default function App() {
 
   const handOnSubmit = (e) => e.preventDefault();
 
+  async function inserirTarefa(description){
+    const DTO = {
+      "description" : description
+    }
+    const tarefaRegistrar = await axios.post(url, DTO);
+    return tarefaRegistrar.data;
+    tarefaRegistrar = await inserirTarefa('');
+  }
+
+  
+
   const handleOnClickAdicionar = () => {
     const novoArray = tarefas;
     novoArray.push(inputTarefa);
     setTarefas([...novoArray]);
     setInputTarefa('');
+    
   };
 
   React.useEffect(() => {
